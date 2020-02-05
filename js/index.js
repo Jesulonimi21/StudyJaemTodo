@@ -36,12 +36,13 @@ let decodedResponse=await response.decode().catch(e=>console.error(e));
 return decodedResponse;
 }
  async function windowsLoaded(){
-
+  console.log("windows loaded");
    let initializeList=contractCall('initializeList');
    let result=await callStatic('getTodo',[]);
     console.log(result);
  }
 
+ document.addEventListener('load',windowsLoaded);
 
 
 document.getElementById("add-btn").addEventListener('click',function(){
