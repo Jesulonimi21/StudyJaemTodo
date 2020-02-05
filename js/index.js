@@ -42,7 +42,7 @@ return decodedResponse;
     console.log(result);
  }
 
- document.addEventListener('load',windowsLoaded);
+ window.addEventListener('load',windowsLoaded);
 
 
 document.getElementById("add-btn").addEventListener('click',function(){
