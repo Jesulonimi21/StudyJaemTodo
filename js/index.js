@@ -46,20 +46,23 @@ return decodedResponse;
       console.log("Added");
       createNewTodoItem(result[i])
     }
+    document.getElementById(loader).style.display="none"
  }
 
  window.addEventListener('load',windowsLoaded);
 
 
 document.getElementById("add-btn").addEventListener('click',async function(){
+  document.getElementById("loader").style.display="block";
 let myInputValue=document.getElementById("my-input").value;
 if(myInputValue.trim()===""){
   alert("youn must write something");
- 
+  document.getElementById("loader").style.display="none";
 }else{
   console.log("Adding");
   await contractCall('addTodo',[myInputValue],0);
   createNewTodoItem(myInputValue);
+  document.getElementById("loader").style.display="none";
 }});
 
 function removeItem(event){
