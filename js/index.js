@@ -30,7 +30,7 @@ let contract=await client.getContractInstance(contractSource,{contractAddress});
 async function callStatic(functionName,args){
     client=await Ae.Aepp();
 let contract=await client.getContractInstance(contractSource,{contractAddress});
-let response= await contract.call(functionName,args).catch(err=>console.error(e));
+let response= await contract.call(functionName,args).catch(err=>console.error(err));
 let decodedResponse=await response.decode().catch(e=>console.error(e));
 
 return decodedResponse;
