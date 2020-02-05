@@ -40,18 +40,23 @@ return decodedResponse;
    let initializeList=await contractCall('initializeList',[],0);
    await contractCall('addTodo',['First to do'],0);
    let result=await callStatic('getTodo',[]);
+
     console.log(result);
+    for(let i in result){
+      createNewTodoItem(result[i])
+    }
  }
 
  window.addEventListener('load',windowsLoaded);
 
 
-document.getElementById("add-btn").addEventListener('click',function(){
+document.getElementById("add-btn").addEventListener('click',async function(){
 let myInputValue=document.getElementById("my-input").value;
 if(myInputValue.trim()===""){
   alert("youn must write something");
  
 }else{
+  await contractCall('addTodo',[myInputValue],0);
   createNewTodoItem(myInputValue);
 }});
 
