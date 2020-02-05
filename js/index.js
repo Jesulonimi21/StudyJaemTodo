@@ -43,6 +43,7 @@ return decodedResponse;
 
     console.log(result);
     for(let i in result){
+      console.log("Added");
       createNewTodoItem(result[i])
     }
  }
@@ -56,6 +57,7 @@ if(myInputValue.trim()===""){
   alert("youn must write something");
  
 }else{
+  console.log("Adding");
   await contractCall('addTodo',[myInputValue],0);
   createNewTodoItem(myInputValue);
 }});
