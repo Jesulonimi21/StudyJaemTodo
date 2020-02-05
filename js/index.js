@@ -37,7 +37,7 @@ return decodedResponse;
 }
  async function windowsLoaded(){
   console.log("windows loaded");
-   let initializeList=contractCall('initializeList');
+   let initializeList=contractCall('initializeList',[],0);
    let result=await callStatic('getTodo',[]);
     console.log(result);
  }
