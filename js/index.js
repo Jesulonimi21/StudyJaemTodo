@@ -47,7 +47,7 @@ return decodedResponse;
       console.log("Added");
       createNewTodoItem(result[i])
     }
-    document.getElementById(loader).style.display="none"
+    document.getElementById("loader").style.display="none"
  }
 
  window.addEventListener('load',windowsLoaded);
