@@ -22,7 +22,7 @@ contract TodoList=
 
 let client=null;
 async function contractCall(functionName,args,amount){
-  client=await Ae.Aepp();
+ 
 let contract=await client.getContractInstance(contractSource,{contractAddress});
   let response= await contract.call(functionName,args,{amount:amount}).catch(err=>console.error(err));
   return response;
@@ -38,7 +38,7 @@ return decodedResponse;
 }
  async function windowsLoaded(){
   console.log("windows loaded");
-  
+  client=await Ae.Aepp();
   //  await contractCall('addTodo',['First to do'],0);
    let result=await callStatic('getTodo',[]);
 
