@@ -1,6 +1,7 @@
 <!Doctype html>
 <html>
     <head>
+    <link rel="stylesheet" href="css/loader.css">
    <style>
 
 button{
@@ -21,14 +22,13 @@ button{
 }
 
 div{
-  
     margin:0 auto;
     text-align:center;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:space-around;
-    border:solid 2px;
+    border:solid 2px fuchsia;
   
 }
    </style>
@@ -39,7 +39,7 @@ div{
         <button id="create-account">Create Account</button>
         <button id="have-account">Have An Account</button>
         </div>
-
+    <div id="loader" class="loader"></div>
     <script src="https://unpkg.com/@aeternity/aepp-sdk@6.1.2/dist/aepp-sdk.browser-script.js"></script>  
     <script src="js/authenticate.js"></script>
     </body>
